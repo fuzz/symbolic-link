@@ -1,0 +1,7 @@
+.DS_Store
+.ghc*
+*.swp
+cabal.project.local
+ctags
+dist/
+dist-*/

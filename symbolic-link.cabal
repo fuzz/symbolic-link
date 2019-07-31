@@ -1,0 +1,28 @@
+cabal-version:       2.4
+name:                symbolic-link
+version:             0.1.0.0
+synopsis:            SymbolicLink provides tools for symbolic links.
+-- description:
+homepage:            https://github.com/fuzz/symbolic-link
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              Fuzz Leonard
+maintainer:          fuzz@kt-22.com
+category:            System
+extra-source-files:  CHANGELOG.md, README.md, examples/macos-symlinks
+
+library
+  exposed-modules:     Main
+  -- other-modules:
+  other-extensions:    DeriveGeneric
+  build-depends:       base ^>=4.12.0.0, directory ^>=1.3.3.0, unix ^>=2.7.2.2
+  -- hs-source-dirs:
+  default-language:    Haskell2010
+
+executable symlink
+  main-is:             Main.hs
+  -- other-modules:
+  other-extensions:    DeriveGeneric
+  build-depends:       base ^>=4.12.0.0, directory ^>=1.3.3.0, unix ^>=2.7.2.2, yaml^>=0.11.1.0
+  -- hs-source-dirs:
+  default-language:    Haskell2010

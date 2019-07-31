@@ -1,0 +1,30 @@
+-
+  target: .bash_profile
+  source: cloud/iProjects/dotfiles/.bash_profile
+-
+  target: .ghc
+  source: cloud/iProjects/dotfiles/.gemrc
+-
+  target: .gitconfig
+  source: cloud/iProjects/dotfiles/.gitconfig
+-
+  target: .jupyter
+  source: cloud/iProjects/dotfiles/.jupyter
+-
+  target: .keras
+  source: cloud/iProjects/dotfiles/.keras
+-
+  target: .sbt
+  source: cloud/iProjects/dotfiles/.sbt
+-
+  target: .vimrc
+  source: cloud/iProjects/dotfiles/.vimrc
+-
+  target: Photos
+  source: cloud/Photos
+-
+  target: bin
+  source: cloud/iProjects/bin
+-
+  target: cloud
+  source: Library/Mobile Documents/com~apple~CloudDocs

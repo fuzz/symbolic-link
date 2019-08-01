@@ -1,8 +1,10 @@
 cabal-version:       2.4
 name:                symbolic-link
-version:             0.1.0.1
-synopsis:            SymbolicLink provides tools for symbolic links.
--- description:
+version:             0.1.0.0
+synopsis:            Symlink tools
+description:
+    Tools for working with symbolic links on POSIX systems.
+
 homepage:            https://github.com/fuzz/symbolic-link
 license:             BSD-3-Clause
 license-file:        LICENSE
@@ -10,6 +12,17 @@ author:              Fuzz Leonard
 maintainer:          fuzz@kt-22.com
 category:            System
 extra-source-files:  CHANGELOG.md, README.md, examples/macos-symlinks
+
+source-repository head
+  type: git
+  location: git@github.com:fuzz/symbolic-link.git
+  branch: master
+
+source-repository this
+  type: git
+  location: git@github.com:fuzz/symbolic-link.git
+  branch: master
+  tag: 0.1.0.0
 
 library
   exposed-modules:     System.SymbolicLink

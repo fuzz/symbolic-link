@@ -2,18 +2,18 @@
 
 module Main where
 
-import Control.Exception
-import Data.Yaml          (FromJSON,
-                           ParseException,
-                           decodeFileEither)
+import Data.Yaml           (FromJSON,
+                            ParseException,
+                            decodeFileEither)
 import GHC.Generics
-import System.Directory   (getHomeDirectory,
-                           setCurrentDirectory)
-import System.Posix.Files (FileStatus,
-                           createSymbolicLink,
-                           getSymbolicLinkStatus,
-                           isSymbolicLink,
-                           removeLink)
+import System.Directory    (getHomeDirectory,
+                            setCurrentDirectory)
+import System.Posix.Files  (FileStatus,
+                            createSymbolicLink,
+                            getSymbolicLinkStatus,
+                            isSymbolicLink,
+                            removeLink)
+import System.SymbolicLink (filePathExist)
 
 main = do
     h <- getHomeDirectory
@@ -42,13 +42,6 @@ clobberIfSymbolicLink lp = do
             removeLink $ target lp
             createSymbolicLink (source lp) (target lp)
         else putStr $ "Refusing to clobber non-symlink " ++ target lp ++ "\n"
-
-filePathExist :: FilePath -> IO Bool
-filePathExist fp = do
-    x <- try (getSymbolicLinkStatus fp) :: IO (Either IOError FileStatus)
-    case x of
-        Left _  -> return False
-        Right _ -> return True
 
 data LinkPair = LinkPair {
       source :: FilePath

@@ -1,6 +1,6 @@
 cabal-version:       2.4
 name:                symbolic-link
-version:             0.1.0.0
+version:             0.1.0.1
 synopsis:            Symlink tools
 description:
     Tools for working with symbolic links on POSIX systems.

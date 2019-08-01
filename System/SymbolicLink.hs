@@ -1,7 +1,7 @@
 {-|
 Module      : System.SymbolicLink
 Description : Tools for working with symbolic links.
-Copyright   : (c) Fuzz Leonaard, 2019
+Copyright   : (c) Fuzz Leonard, 2019
 License     : BSD-3
 Maintainer  : fuzz@kt-22.com
 Stability   : experimental
@@ -14,11 +14,13 @@ sequence of source/target mappings from a YAML file in @.symlinks@ and attempts
 to create them. If the target exists and is a symbolic link it will be removed
 and replaced, otherwise symlink will refuse to clobber it.
 
-The function @filePathExist@ works like @fileExist@ but does
-not follow the symlink, thus making it suitable for working with unreferenced
-symlinks. Unreferenced symlinks are not necessarily "broken"; one should not
-have to handle exceptions to work with them.
+The function @filePathExist@ works like @fileExist@ from @System.Posix.Files@
+or @doesPathExist@ from @System.Directory@ but does not follow symlinks, thus
+making it suitable for working with unreferenced symlinks. Unreferenced
+symlinks are not necessarily "broken"; one should not have to handle exceptions
+to work with them.
 -}
+
 module System.SymbolicLink
 ( filePathExist
 ) where

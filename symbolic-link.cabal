@@ -14,7 +14,6 @@ category:            System
 extra-source-files:
     CHANGELOG.markdown
   , README.markdown
-  , examples/macos-symlinks
 
 source-repository head
   type: git

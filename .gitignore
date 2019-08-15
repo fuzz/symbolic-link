@@ -1,7 +1,7 @@
 .DS_Store
 .ghc*
 *.swp
-cabal.project.local
+cabal.project.local*
 ctags
 dist/
 dist-*/

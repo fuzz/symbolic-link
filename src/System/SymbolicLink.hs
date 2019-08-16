@@ -28,8 +28,8 @@ to get the @FilePath@ status.
 
 module System.SymbolicLink
   ( FileType
-  , filePathExistEither
   , filePathExist
+  , filePathExistEither
   , fileType
   , fileTypeEither
   , fileTypeMaybe
@@ -48,15 +48,6 @@ import System.Posix.Files ( FileStatus
                           , isSocket
                           , isSymbolicLink
                           )
-
--- | Like 'filePathExist' but get the 'IOError' instead of 'False'
-filePathExistEither :: FilePath -> IO (Either IOError Bool)
-filePathExistEither f = do
-  x <- try (getSymbolicLinkStatus f) :: IO (Either IOError FileStatus)
-  case x of
-    Left  e -> return $ Left e
-    Right _ -> return $ Right True
-
 -- | 'filePathExist' works like 'System.Posix.Files.fileExist'
 --   except it doesn't follow symlinks.
 filePathExist :: FilePath -> IO Bool
@@ -65,6 +56,14 @@ filePathExist f = do
   case x of
     Left  _ -> return False
     Right _ -> return True
+
+-- | Like 'filePathExist' but get the 'IOError' instead of 'False'
+filePathExistEither :: FilePath -> IO (Either IOError Bool)
+filePathExistEither f = do
+  x <- try (getSymbolicLinkStatus f) :: IO (Either IOError FileStatus)
+  case x of
+    Left  e -> return $ Left e
+    Right _ -> return $ Right True
 
 -- | Return the actual 'FileType' of a 'FilePath' without following
 -- symbolic links. This is unsafe; you should ensure you can get a

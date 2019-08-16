@@ -1,7 +1,7 @@
 cabal-version:       2.4
 name:                symbolic-link
 version:             0.1.1.0
-synopsis:            Symlink tools
+synopsis:            Symlink functions
 description:
   Functions for working with symbolic links.
 

@@ -1,10 +1,13 @@
+import System.Posix.Files
 import System.SymbolicLink
 import Test.Tasty
 import Test.Tasty.HUnit
 
 main = defaultMain $
   testCase "FilePath should exist" $ do
-    filePathExist "/Users/fuzz/testfile" @? "FilePath does not exist"
+    let testFile = "/tmp/regular.file"
+    writeFile testFile "test -- delete me"
 
-  testCase "fileType should recognize a regular file" $ do
-    fileType "/Users/fuzz/testfile" (@?=) Just RegularFile
+    filePathExist testFile @? "FilePath does not exist"
+
+    removeLink testFile

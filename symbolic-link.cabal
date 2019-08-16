@@ -3,7 +3,7 @@ name:                symbolic-link
 version:             0.1.1.0
 synopsis:            Symlink tools
 description:
-  Functions for working with symbolic links on POSIX systems.
+  Functions for working with symbolic links.
 
 homepage:            https://github.com/fuzz/symbolic-link
 license:             BSD-3-Clause
@@ -47,6 +47,7 @@ test-suite test
     test.hs
   build-depends:
       base ^>=4.12.0.0
-    , symbolic-link >= 0.1.0.2
-    , tasty >= 1.2.3
-    , tasty-hunit >= 0.10.0.2
+    , symbolic-link >=0.1.1.0
+    , tasty >=1.2.3
+    , tasty-hunit >=0.10.0.2
+    , unix ^>=2.7.2.2

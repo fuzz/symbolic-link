@@ -3,7 +3,7 @@ name:                symbolic-link
 version:             0.1.1.0
 synopsis:            Symlink functions
 description:
-  Functions for working with symbolic links.
+  SymbolicLink provides functions for working with symbolic links.
 
 homepage:            https://github.com/fuzz/symbolic-link
 license:             BSD-3-Clause

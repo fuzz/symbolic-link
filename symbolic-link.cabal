@@ -1,6 +1,6 @@
 cabal-version:       2.4
 name:                symbolic-link
-version:             0.1.1.0
+version:             0.1.1.1
 synopsis:            Symlink functions
 description:
   SymbolicLink provides functions for working with symbolic links.
@@ -22,7 +22,7 @@ source-repository head
 source-repository this
   type: git
   location: git@github.com:fuzz/symbolic-link.git
-  tag: 0.1.1.0
+  tag: 0.1.1.1
 
 library
   exposed-modules:
@@ -47,7 +47,7 @@ test-suite test
     test.hs
   build-depends:
       base ^>=4.12.0.0
-    , symbolic-link >=0.1.1.0
+    , symbolic-link >=0.1.1.1
     , tasty >=1.2.3
     , tasty-hunit >=0.10.0.2
     , unix ^>=2.7.2.2

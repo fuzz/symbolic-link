@@ -10,4 +10,4 @@
 
 ## 0.1.1.0 -- 2019-08-15
 
-* Move executable to `wu-wei`, add FileType and new functions.
+* Move executable to `wu-wei`, add `FileType` and new functions.
